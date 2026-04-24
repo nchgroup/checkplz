@@ -1,6 +1,6 @@
 [package]
-name = "CheckPlz"
-version = "0.2.0"
+name = "checkplz"
+version = "0.3.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -13,11 +13,8 @@ strip = true        # Automatically strip symbols from the binary.
 
 
 [dependencies]
-clap = { version = "4.0", features = ["derive"] }
-winapi = { version = "0.3.9", features = ["winuser", "libloaderapi", "fileapi", "handleapi"] }
-widestring = "1.0"
-thiserror = "1.0"
-log = "0.4"
-env_logger = "0.10"
-indicatif = "0.17"
-rand = "0.8"
+clap = { version = "4.5", features = ["derive"] }
+windows = { version = "0.62.2", features = ["Win32_System_Antimalware"] }
+colored = "3.1"
+rand = "0.10"
+ureq = "3.2"

@@ -1,6 +1,10 @@
-# CheckPlz
+# checkplz
 
-**CheckPlz** is an Rust adaptation of the populars **[ThreatCheck](https://github.com/rasta-mouse/ThreatCheck)** & **[GoCheck](https://github.com/gatariee/gocheck)** tools, designed to scan files for potential threats while leveraging AMSI (Antimalware Scan Interface) and Windows Defender. By isolating malicious content with precision and providing comprehensive analysis, CheckPlz offers an enhanced and efficient file scanning experience.
+**checkplz** is an Rust adaptation of the populars **[ThreatCheck](https://github.com/rasta-mouse/ThreatCheck)** & **[GoCheck](https://github.com/gatariee/gocheck)** tools, designed to scan files for potential threats while leveraging AMSI (Antimalware Scan Interface) and Windows Defender. By isolating malicious content with precision and providing comprehensive analysis, checkplz offers an enhanced and efficient file scanning experience.
+
+## Contributing
+
+Mod by Vay3t (original: https://github.com/BlackSnufkin/CheckPlz)
 
 ## Key Features
 - **AMSI Integration:** Perform accurate buffer scans for threat detection.
@@ -8,7 +12,6 @@
 - **Hex Dump Analysis:** Visualize malicious content with a detailed hexadecimal and ASCII dump.
 - **Debugging Support:** Enable verbose output for deeper insights.
 - **Customizable Output:** Choose between raw or colorful, human-friendly terminal outputs.
-
 
 ## How It Works
 
@@ -28,11 +31,7 @@
 
 
 ## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/CheckPlz.git
-   cd CheckPlz
-   ```
+1. Clone the repository
 2. Compile the project:
    ```bash
    cargo build --release
@@ -40,11 +39,10 @@
 3. The executable will be available at `target/release/checkplz.exe`.
 
 ## Usage Instructions
-Run CheckPlz with the desired options:
+Run checkplz with the desired options:
 
 ```bash
-
-Usage: CheckPlz.exe [OPTIONS] --file <FILE>
+Usage: checkplz.exe [OPTIONS]
 
 Options:
   -f, --file <FILE>  Path to the file to scan
@@ -52,6 +50,7 @@ Options:
   -a, --amsi         Use AMSI scan
   -m, --msdefender   Use Windows Defender scan
   -r, --raw          Raw output without ANSI colors
+  -u, --url <URL>    URL to download and scan the binary
   -h, --help         Print help
   -V, --version      Print version
 ```
@@ -59,27 +58,30 @@ Options:
 ### Example Commands
 - Scan a file using AMSI:
   ```bash
-  checkplz --file malicious.exe --amsi
+  checkplz.exe --file malicious.exe --amsi
   ```
 
 - Scan a file with Windows Defender:
   ```bash
-  checkplz --file suspicious.exe --msdefender
+  checkplz.exe --file suspicious.exe --msdefender
   ```
 
 - Perform a scan using both AMSI and Windows Defender with debug output enabled:
   ```bash
-  checkplz --file unknown.exe --amsi --msdefender --debug
+  checkplz.exe --file unknown.exe --amsi --msdefender --debug
   ```
 
 - Perform a scan with raw output formatting:
   ```bash
-  checkplz --file unknown.exe --amsi --raw
+  checkplz.exe --file unknown.exe --amsi --raw
+  ```
+
+- Scan a file from a URL:
+  ```bash
+  checkplz.exe --url https://example.com/malicious.exe --amsi
   ```
 
 ## Output Overview
 - **Scan Results:** Displays detection status, potential malicious offsets, and the time taken for scanning.
 - **Hex Dump Analysis:** Detailed views of the suspicious sections, highlighting malicious bytes.
 ![Screenshot 2024-12-27 163057](https://github.com/user-attachments/assets/b8101d33-c4a4-4fc5-85f7-f1b1b6313dde)
-
-
